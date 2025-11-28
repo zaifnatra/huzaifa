@@ -1,26 +1,32 @@
-<div class="p-10 bg-gray-100 h-screen">
-  <h1 class="text-4xl font-bold text-blue-600">Task Tracker App</h1>
-  <div class="flex">
+<div class="min-h-screen bg-gray-100 p-10 font-sans">
+
+  <h1 class="text-4xl font-bold text-blue-600 mb-8">Task Tracker App</h1>
+
+  <div class="flex gap-4 mb-6">
     <input
-    [(ngModel)]="newTask"
-    placeholder="Insert task"
-    class = "p-3"
+      [(ngModel)]="newTask"
+      placeholder="Insert task"
+      class="p-3 rounded-lg border border-gray-300 w-full shadow-sm"
     />
     <button
       (click)="addTodo()"
-      class = "">
-      Add Here
+      class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition">
+      Add
     </button>
   </div>
-<ul>
-  @for (item of todos; track item.task) {
-    <li>
-      <span>{{ item.task }}</span>
-      <span>Pending</span>
-    </li>
-  } @empty {
-    <p>No tasks yet</p>
-  }
-</ul>
+
+  <ul class="space-y-3">
+    @for (item of todos; track item.task) {
+      <li class="bg-white p-4 rounded-lg shadow flex justify-between items-center">
+        <span class="text-lg font-medium text-gray-800">{{ item.task }}</span>
+        
+        <span class="text-sm bg-yellow-100 text-yellow-800 py-1 px-3 rounded-full">
+          Pending
+        </span>
+      </li>
+    } @empty {
+      <p class="text-gray-500 italic">No tasks yet</p>
+    }
+  </ul>
 
 </div>
