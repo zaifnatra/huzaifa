@@ -1,32 +1,79 @@
-<div class="min-h-screen bg-gray-100 p-10 font-sans">
+<div class="min-h-screen bg-gray-50 text-gray-900 font-sans selection:bg-blue-100">
 
-  <h1 class="text-4xl font-bold text-blue-600 mb-8">Task Tracker App</h1>
+  <!-- Header Section -->
+  <header class="py-20 px-6 text-center">
+    <h1 class="text-6xl font-extrabold tracking-tight text-gray-900 mb-4">
+      Huzaifa Fareed
+    </h1>
+    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Building things and exploring life.
+    </p>
+  </header>
 
-  <div class="flex gap-4 mb-6">
-    <input
-      [(ngModel)]="newTask"
-      placeholder="Insert task"
-      class="p-3 rounded-lg border border-gray-300 w-full shadow-sm"
-    />
-    <button
-      (click)="addTodo()"
-      class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition">
-      Add
-    </button>
-  </div>
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 pb-20 space-y-20">
 
-  <ul class="space-y-3">
-    @for (item of todos; track item.task) {
-      <li class="bg-white p-4 rounded-lg shadow flex justify-between items-center">
-        <span class="text-lg font-medium text-gray-800">{{ item.task }}</span>
-        
-        <span class="text-sm bg-yellow-100 text-yellow-800 py-1 px-3 rounded-full">
-          Pending
-        </span>
-      </li>
-    } @empty {
-      <p class="text-gray-500 italic">No tasks yet</p>
-    }
-  </ul>
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="text-3xl font-bold mb-8 border-b pb-4 border-gray-200">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Project Placeholder 1 -->
+        <div
+          class="group bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100">
+          <div
+            class="h-48 bg-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-blue-50 transition-colors">
+            <span class="font-medium">Project Preview</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">Project Name</h3>
+            <p class="text-gray-600 mb-4">A brief description of the project goes here. What tech stack did you use?
+              What problem did it solve?</p>
+            <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:underline">
+              View Project <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Placeholder 2 -->
+        <div
+          class="group bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100">
+          <div
+            class="h-48 bg-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-blue-50 transition-colors">
+            <span class="font-medium">Project Preview</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">Another Project</h3>
+            <p class="text-gray-600 mb-4">Description of another cool thing you built. Highlight the key features and
+              your role.</p>
+            <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:underline">
+              View Project <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Life Section -->
+    <section id="life">
+      <h2 class="text-3xl font-bold mb-8 border-b pb-4 border-gray-200">Life</h2>
+      <div class="prose prose-lg text-gray-600 max-w-none">
+        <p>
+          This is where you can share your non-coding interests, hobbies, travel logs, or personal philosophy.
+          Maybe a photo gallery or a blog post about your latest adventure.
+        </p>
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="aspect-square bg-gray-200 rounded-xl"></div>
+          <div class="aspect-square bg-gray-200 rounded-xl"></div>
+          <div class="aspect-square bg-gray-200 rounded-xl"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 text-center text-gray-500 text-sm border-t border-gray-200 mt-10">
+    &copy; 2025 Huzaifa Fareed. All rights reserved.
+  </footer>
 
 </div>
